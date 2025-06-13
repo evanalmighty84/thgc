@@ -1,0 +1,30 @@
+name: github pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          submodules: false
+
+      - name: Build with Jekyll
+        uses: ghcr.io/actions/jekyll-build-pages@v1.0.13
+
+      - name: Copy CNAME
+        run: cp CNAME _site/
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: _site
+
+      - name: Deploy to Pages
+        uses: actions/deploy-pages@v1
