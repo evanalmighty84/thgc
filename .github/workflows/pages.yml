@@ -5,26 +5,39 @@ on:
     branches:
       - main
 
+permissions:
+  contents: read       # for checkout
+  pages: write         # to deploy
+  id-token: write      # if you ever add OIDC
+
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
 
     steps:
+      # 1) checkout your content
       - name: Checkout
         uses: actions/checkout@v3
         with:
           submodules: false
 
+      # 2) build your site with Jekyll
       - name: Build with Jekyll
-        uses: ghcr.io/actions/jekyll-build-pages@v1.0.13
+        uses: actions/jekyll-build-pages@v1
+        # if you need a custom output dir:
+        # with:
+        #   destination: _site
 
+      # 3) copy CNAME into the output so Pages knows your domain
       - name: Copy CNAME
         run: cp CNAME _site/
 
+      # 4) upload the generated artifact
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
           path: _site
 
+      # 5) finally, deploy to GitHub Pages
       - name: Deploy to Pages
         uses: actions/deploy-pages@v1
