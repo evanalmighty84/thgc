@@ -1,0 +1,31 @@
+name: Deploy static site to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write   # to push to gh-pages branch
+  pages: write      # to publish to Pages
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1) Check out your repo
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      # 2) (Optional build step if you have one, e.g. npm or Jekyll)
+      # - name: Build
+      #   run: npm ci && npm run build
+
+      # 3) Publish to GitHub Pages with custom domain
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./       # your site lives at the repo root
+          cname: www.thgc.com
