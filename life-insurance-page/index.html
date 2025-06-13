@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en-US" prefix="og: https://ogp.me/ns#">
 <head>
+	<style>
+		#contact-form .form-control {
+			width: 100% !important;
+		}
+
+	</style>
 <link rel="preconnect" href="https://fonts.gstatic.com/">
 <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
 <meta charset="UTF-8">
@@ -262,93 +268,218 @@ body.pojo-a11y-focusable a:focus{ outline-style: solid !important;	outline-width
                         <div class="gform_heading">
                             <span class="gform_description"></span>
                         </div>
-<form method="post" enctype="multipart/form-data" target="gform_ajax_frame_24" id="gform_24" action="https://thgc.amplispotinternational.com" novalidate>
-                        <div class="gform_body gform-body"><div id="gform_fields_24" class="gform_fields top_label form_sublabel_below description_below">
-<fieldset id="field_24_2" class="gfield gfield--width-full gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible">
-<legend class="gfield_label gfield_label_before_complex">Name<span class="gfield_required"><span class="gfield_required gfield_required_text">(Required)</span></span>
-</legend>
-<div class="ginput_complex ginput_container no_prefix has_first_name no_middle_name has_last_name no_suffix gf_name_has_2 ginput_container_name" id="input_24_2">
-                            
-                            <span id="input_24_2_3_container" class="name_first">
-                                                    <input type="text" name="input_2.3" id="input_24_2_3" value="" aria-label="First name" aria-required="true">
-                                                    <label for="input_24_2_3">First</label>
-                                                </span>
-                            
-                            <span id="input_24_2_6_container" class="name_last">
-                                                    <input type="text" name="input_2.6" id="input_24_2_6" value="" aria-label="Last name" aria-required="true">
-                                                    <label for="input_24_2_6">Last</label>
-                                                </span>
-                            
-                        </div>
-</fieldset>
-<div id="field_24_3" class="gfield gfield--width-half gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible">
-<label class="gfield_label" for="input_24_3">Phone<span class="gfield_required"><span class="gfield_required gfield_required_text">(Required)</span></span></label><div class="ginput_container ginput_container_phone"><input name="input_3" id="input_24_3" type="tel" value="" class="large" aria-required="true" aria-invalid="false"></div>
-</div>
-<div id="field_24_4" class="gfield gfield--width-half gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible">
-<label class="gfield_label" for="input_24_4">Email<span class="gfield_required"><span class="gfield_required gfield_required_text">(Required)</span></span></label><div class="ginput_container ginput_container_email">
-                            <input name="input_4" id="input_24_4" type="email" value="" class="large" aria-required="true" aria-invalid="false">
-                        </div>
-</div>
-<fieldset id="field_24_6" class="gfield gfield--width-full gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible">
-<legend class="gfield_label screen-reader-text gfield_label_before_complex"><span class="gfield_required"><span class="gfield_required gfield_required_text">(Required)</span></span></legend>
-<div class="ginput_container ginput_container_checkbox"><div class="gfield_checkbox" id="input_24_6">
-<div class="gchoice gchoice_24_6_1">
-								<input class="gfield-choice-input" name="input_6.1" type="checkbox" value="Smoker" id="choice_24_6_1">
-								<label for="choice_24_6_1" id="label_24_6_1">Smoker</label>
+					<section>
+						<div class="container">
+							<div class="row justify-content-center">
+								<div class="col-12 col-md-8 mb-4">
+									<h2>Contact Us</h2>
+
+									<form id="contact-form" class="row g-3" method="POST"
+										  action="https://tghc-api-d7b9d550b9e4.herokuapp.com/api/contactus">
+
+										<!-- First Name -->
+										<div class="col-12 col-md-6 mb-3">
+											<input
+													type="text"
+													name="firstName"
+													class="form-control"
+													placeholder="First Name"
+													required
+											/>
+										</div>
+
+										<!-- Last Name -->
+										<div class="col-12 col-md-6 mb-3">
+											<input
+													type="text"
+													name="lastName"
+													class="form-control"
+													placeholder="Last Name"
+													required
+											/>
+										</div>
+
+										<!-- Phone -->
+										<div class="col-12 col-md-6 mb-3">
+											<input
+													type="tel"
+													name="phone"
+													class="form-control"
+													placeholder="Phone (e.g. (214) 548-9175)"
+													required
+											/>
+										</div>
+
+										<!-- Email -->
+										<div class="col-12 col-md-6 mb-3">
+											<input
+													type="email"
+													name="email"
+													class="form-control"
+													placeholder="Email Address"
+													required
+											/>
+										</div>
+
+										<!-- Smoker? -->
+										<div class="col-12 mb-3">
+											<label class="form-label d-block">Smoker?</label>
+											<div class="form-check form-check-inline">
+												<input
+														class="form-check-input"
+														type="radio"
+														name="smoker"
+														id="smoker-yes"
+														value="Smoker"
+														required
+												/>
+												<label class="form-check-label" for="smoker-yes">Yes</label>
+											</div>
+											<div class="form-check form-check-inline">
+												<input
+														class="form-check-input"
+														type="radio"
+														name="smoker"
+														id="smoker-no"
+														value="Non-Smoker"
+												/>
+												<label class="form-check-label" for="smoker-no">No</label>
+											</div>
+										</div>
+
+										<!-- Date of Birth -->
+										<div class="col-12 mb-3">
+											<label class="form-label d-block">Date of Birth</label>
+											<div class="row gx-2">
+												<div class="col-4">
+													<input
+															type="number"
+															name="dobMonth"
+															class="form-control"
+															placeholder="MM"
+															min="1"
+															max="12"
+															required
+													/>
+												</div>
+												<div class="col-4">
+													<input
+															type="number"
+															name="dobDay"
+															class="form-control"
+															placeholder="DD"
+															min="1"
+															max="31"
+															required
+													/>
+												</div>
+												<div class="col-4">
+													<input
+															type="number"
+															name="dobYear"
+															class="form-control"
+															placeholder="YYYY"
+															min="1920"
+															max="2025"
+															required
+													/>
+												</div>
+											</div>
+										</div>
+
+										<!-- Message -->
+										<div class="col-12 mb-3">
+            <textarea
+					name="message"
+					class="form-control"
+					rows="6"
+					placeholder="How can we help you?"
+					required
+			></textarea>
+										</div>
+
+										<!-- Consent -->
+										<div class="col-12 mb-3 form-check">
+											<input
+													type="checkbox"
+													name="consent"
+													class="form-check-input"
+													id="consent"
+													required
+											/>
+											<label class="form-check-label" for="consent">
+												By checking this box, you agree to receive an SMS from The He…
+											</label>
+										</div>
+
+										<!-- Honeypot (anti-spam) -->
+										<div style="display:none;">
+											<input type="text" name="honeypot" tabindex="-1" autocomplete="off" />
+										</div>
+
+										<!-- Submit -->
+										<div class="col-12">
+											<button type="submit" class="btn btn-primary w-100">
+												Submit
+											</button>
+										</div>
+									</form>
+
+									<div id="contact-response"></div>
+								</div>
 							</div>
-<div class="gchoice gchoice_24_6_2">
-								<input class="gfield-choice-input" name="input_6.2" type="checkbox" value="Non-Smoker" id="choice_24_6_2">
-								<label for="choice_24_6_2" id="label_24_6_2">Non-Smoker</label>
-							</div>
-</div></div>
-</fieldset>
-<fieldset id="field_24_7" class="gfield gfield--width-full gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible">
-<legend class="gfield_label gfield_label_before_complex">Date Of Birth<span class="gfield_required"><span class="gfield_required gfield_required_text">(Required)</span></span>
-</legend>
-<div id="input_24_7" class="ginput_container ginput_complex">
-<div class="gfield_date_month ginput_container ginput_container_date" id="input_24_7_1_container">
-                                            <input type="number" name="input_7[]" id="input_24_7_1" value="" aria-required="true" placeholder="MM" min="1" max="12" step="1">
-                                            <label for="input_24_7_1" class="screen-reader-text">Month</label>
-                                        </div>
-<div class="gfield_date_day ginput_container ginput_container_date" id="input_24_7_2_container">
-                                            <input type="number" name="input_7[]" id="input_24_7_2" value="" aria-required="true" placeholder="DD" min="1" max="31" step="1">
-                                            <label for="input_24_7_2" class="screen-reader-text">Day</label>
-                                        </div>
-<div class="gfield_date_year ginput_container ginput_container_date" id="input_24_7_3_container">
-                                            <input type="number" name="input_7[]" id="input_24_7_3" value="" aria-required="true" placeholder="YYYY" min="1920" max="2026" step="1">
-                                            <label for="input_24_7_3" class="screen-reader-text">Year</label>
-                                       </div>
-                                   </div>
-</fieldset>
-<div id="field_24_1" class="gfield gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible">
-<label class="gfield_label" for="input_24_1">How  can we help you?<span class="gfield_required"><span class="gfield_required gfield_required_text">(Required)</span></span></label><div class="ginput_container ginput_container_textarea"><textarea name="input_1" id="input_24_1" class="textarea small" aria-required="true" aria-invalid="false" rows="10" cols="50"></textarea></div>
-</div>
-<fieldset id="field_24_8" class="gfield gfield--width-full field_sublabel_below field_description_below gfield_visibility_visible">
-<legend class="gfield_label screen-reader-text gfield_label_before_complex"></legend>
-<div class="ginput_container ginput_container_consent">
-<input name="input_8.1" id="input_24_8_1" type="checkbox" value="1" aria-invalid="false"> <label class="gfield_consent_label" for="input_24_8_1">By checking this box, you agree to receive an SMS from The Heusinkveld Group Companies Agency. You may reply Stop to opt-out at any time!</label><input type="hidden" name="input_8.2" value="By checking this box, you agree to receive an SMS from The Heusinkveld Group Companies Agency. You may reply Stop to opt-out at any time!" class="gform_hidden"><input type="hidden" name="input_8.3" value="15" class="gform_hidden">
-</div>
-</fieldset>
-<div id="field_24_5" class="gfield gfield--width-full field_sublabel_below field_description_below gfield_visibility_visible">
-<label class="gfield_label screen-reader-text" for="input_24_5"></label><div id="input_24_5" class="ginput_container ginput_recaptcha" data-sitekey="6LfhvAIqAAAAAJNWR6wFEUwkEITB5qUalnlZCVxh" data-theme="light" data-tabindex="-1" data-size="invisible" data-badge="bottomright"></div>
-</div>
-<div id="field_24_9" class="gfield gform_validation_container field_sublabel_below field_description_below gfield_visibility_visible">
-<label class="gfield_label" for="input_24_9">Phone</label><div class="ginput_container"><input name="input_9" id="input_24_9" type="text" value="" autocomplete="new-password"></div>
-<div class="gfield_description" id="gfield_description_24_9">This field is for validation purposes and should be left unchanged.</div>
-</div>
-</div></div>
-        <div class="gform_footer top_label"> <input type="submit" id="gform_submit_button_24" class="gform_button button" value="Submit" onclick='if(window["gf_submitting_24"]){return false;}  if( !jQuery("#gform_24")[0].checkValidity || jQuery("#gform_24")[0].checkValidity()){window["gf_submitting_24"]=true;}  ' onkeypress='if( event.keyCode == 13 ){ if(window["gf_submitting_24"]){return false;} if( !jQuery("#gform_24")[0].checkValidity || jQuery("#gform_24")[0].checkValidity()){window["gf_submitting_24"]=true;}  jQuery("#gform_24").trigger("submit",[true]); }'> <input type="hidden" name="gform_ajax" value="form_id=24&amp;title=&amp;description=1&amp;tabindex=0">
-            <input type="hidden" class="gform_hidden" name="is_submit_24" value="1">
-            <input type="hidden" class="gform_hidden" name="gform_submit" value="24">
-            
-            <input type="hidden" class="gform_hidden" name="gform_unique_id" value="">
-            <input type="hidden" class="gform_hidden" name="state_24" value="WyJ7XCI4LjFcIjpcIjMzZjE5ZmI4M2JiZTE1YTc1Y2IzOTZmYmVjOWJlM2NhXCIsXCI4LjJcIjpcIjkyZmEyZWU1MjdhZTc4NzM0MTc4NzMwMDNhZmI0MzJhXCIsXCI4LjNcIjpcIjRjMTQxNmQwZDcyNzdiODgyYmUzNDNmYzA1ZTE5ZDBlXCJ9IiwiZTY4MWU0MTk4NjNlMmIzODc2NTc0NDRkZGI1OGU4MTgiXQ==">
-            <input type="hidden" class="gform_hidden" name="gform_target_page_number_24" id="gform_target_page_number_24" value="0">
-            <input type="hidden" class="gform_hidden" name="gform_source_page_number_24" id="gform_source_page_number_24" value="1">
-            <input type="hidden" name="gform_field_values" value="">
-            
-        </div>
-                        </form>
+						</div>
+
+						<script>
+							document.addEventListener('DOMContentLoaded', () => {
+								const form = document.getElementById('contact-form');
+								const resp = document.getElementById('contact-response');
+								const API = form.action;
+
+								form.addEventListener('submit', async e => {
+									e.preventDefault();
+									resp.innerHTML = '';
+
+									// assemble payload
+									const data = {
+										// combine first & last
+										name: `${form.firstName.value.trim()} ${form.lastName.value.trim()}`,
+										phone: form.phone.value.trim(),
+										email: form.email.value.trim(),
+										message: form.message.value.trim(),
+										smoker: form.smoker.value,
+										dob: `${form.dobYear.value}-${form.dobMonth.value}-${form.dobDay.value}`
+									};
+
+									try {
+										const r = await fetch(API, {
+											method: 'POST',
+											headers: { 'Content-Type': 'application/json' },
+											body: JSON.stringify(data)
+										});
+										if (!r.ok) {
+											const err = await r.json().catch(() => ({}));
+											throw new Error(err.error || r.statusText);
+										}
+										form.reset();
+										resp.innerHTML = `
+            <div class="alert alert-success mt-3">
+              Thanks! We’ve received your submission.
+            </div>
+          `;
+									} catch (err) {
+										console.error(err);
+										resp.innerHTML = `
+            <div class="alert alert-danger mt-3">
+              Oops—something went wrong. Please try again.
+            </div>
+          `;
+									}
+								});
+							});
+						</script>
+					</section>
+
                         </div>
                 <iframe style="display:none;width:0px;height:0px;" src="about:blank" name="gform_ajax_frame_24" id="gform_ajax_frame_24" title="This iframe contains the logic required to handle Ajax powered Gravity Forms."></iframe>
                 <script type="text/javascript" defer src="data:text/javascript;base64,Ci8qIDwhW0NEQVRBWyAqLwogZ2Zvcm0uaW5pdGlhbGl6ZU9uTG9hZGVkKCBmdW5jdGlvbigpIHtnZm9ybUluaXRTcGlubmVyKCAyNCwgJ2h0dHBzOi8vdGhnYy5hbXBsaXNwb3RpbnRlcm5hdGlvbmFsLmNvbS93cC1jb250ZW50L3BsdWdpbnMvZ3Jhdml0eWZvcm1zL2ltYWdlcy9zcGlubmVyLnN2ZycgKTtqUXVlcnkoJyNnZm9ybV9hamF4X2ZyYW1lXzI0Jykub24oJ2xvYWQnLGZ1bmN0aW9uKCl7dmFyIGNvbnRlbnRzID0galF1ZXJ5KHRoaXMpLmNvbnRlbnRzKCkuZmluZCgnKicpLmh0bWwoKTt2YXIgaXNfcG9zdGJhY2sgPSBjb250ZW50cy5pbmRleE9mKCdHRl9BSkFYX1BPU1RCQUNLJykgPj0gMDtpZighaXNfcG9zdGJhY2spe3JldHVybjt9dmFyIGZvcm1fY29udGVudCA9IGpRdWVyeSh0aGlzKS5jb250ZW50cygpLmZpbmQoJyNnZm9ybV93cmFwcGVyXzI0Jyk7dmFyIGlzX2NvbmZpcm1hdGlvbiA9IGpRdWVyeSh0aGlzKS5jb250ZW50cygpLmZpbmQoJyNnZm9ybV9jb25maXJtYXRpb25fd3JhcHBlcl8yNCcpLmxlbmd0aCA+IDA7dmFyIGlzX3JlZGlyZWN0ID0gY29udGVudHMuaW5kZXhPZignZ2Zvcm1SZWRpcmVjdCgpeycpID49IDA7dmFyIGlzX2Zvcm0gPSBmb3JtX2NvbnRlbnQubGVuZ3RoID4gMCAmJiAhIGlzX3JlZGlyZWN0ICYmICEgaXNfY29uZmlybWF0aW9uO3ZhciBtdCA9IHBhcnNlSW50KGpRdWVyeSgnaHRtbCcpLmNzcygnbWFyZ2luLXRvcCcpLCAxMCkgKyBwYXJzZUludChqUXVlcnkoJ2JvZHknKS5jc3MoJ21hcmdpbi10b3AnKSwgMTApICsgMTAwO2lmKGlzX2Zvcm0pe2pRdWVyeSgnI2dmb3JtX3dyYXBwZXJfMjQnKS5odG1sKGZvcm1fY29udGVudC5odG1sKCkpO2lmKGZvcm1fY29udGVudC5oYXNDbGFzcygnZ2Zvcm1fdmFsaWRhdGlvbl9lcnJvcicpKXtqUXVlcnkoJyNnZm9ybV93cmFwcGVyXzI0JykuYWRkQ2xhc3MoJ2dmb3JtX3ZhbGlkYXRpb25fZXJyb3InKTt9IGVsc2Uge2pRdWVyeSgnI2dmb3JtX3dyYXBwZXJfMjQnKS5yZW1vdmVDbGFzcygnZ2Zvcm1fdmFsaWRhdGlvbl9lcnJvcicpO31zZXRUaW1lb3V0KCBmdW5jdGlvbigpIHsgLyogZGVsYXkgdGhlIHNjcm9sbCBieSA1MCBtaWxsaXNlY29uZHMgdG8gZml4IGEgYnVnIGluIGNocm9tZSAqLyBqUXVlcnkoZG9jdW1lbnQpLnNjcm9sbFRvcChqUXVlcnkoJyNnZm9ybV93cmFwcGVyXzI0Jykub2Zmc2V0KCkudG9wIC0gbXQpOyB9LCA1MCApO2lmKHdpbmRvd1snZ2Zvcm1Jbml0RGF0ZXBpY2tlciddKSB7Z2Zvcm1Jbml0RGF0ZXBpY2tlcigpO31pZih3aW5kb3dbJ2dmb3JtSW5pdFByaWNlRmllbGRzJ10pIHtnZm9ybUluaXRQcmljZUZpZWxkcygpO312YXIgY3VycmVudF9wYWdlID0galF1ZXJ5KCcjZ2Zvcm1fc291cmNlX3BhZ2VfbnVtYmVyXzI0JykudmFsKCk7Z2Zvcm1Jbml0U3Bpbm5lciggMjQsICdodHRwczovL3RoZ2MuYW1wbGlzcG90aW50ZXJuYXRpb25hbC5jb20vd3AtY29udGVudC9wbHVnaW5zL2dyYXZpdHlmb3Jtcy9pbWFnZXMvc3Bpbm5lci5zdmcnICk7alF1ZXJ5KGRvY3VtZW50KS50cmlnZ2VyKCdnZm9ybV9wYWdlX2xvYWRlZCcsIFsyNCwgY3VycmVudF9wYWdlXSk7d2luZG93WydnZl9zdWJtaXR0aW5nXzI0J10gPSBmYWxzZTt9ZWxzZSBpZighaXNfcmVkaXJlY3Qpe3ZhciBjb25maXJtYXRpb25fY29udGVudCA9IGpRdWVyeSh0aGlzKS5jb250ZW50cygpLmZpbmQoJy5HRl9BSkFYX1BPU1RCQUNLJykuaHRtbCgpO2lmKCFjb25maXJtYXRpb25fY29udGVudCl7Y29uZmlybWF0aW9uX2NvbnRlbnQgPSBjb250ZW50czt9c2V0VGltZW91dChmdW5jdGlvbigpe2pRdWVyeSgnI2dmb3JtX3dyYXBwZXJfMjQnKS5yZXBsYWNlV2l0aChjb25maXJtYXRpb25fY29udGVudCk7alF1ZXJ5KGRvY3VtZW50KS5zY3JvbGxUb3AoalF1ZXJ5KCcjZ2ZfMjQnKS5vZmZzZXQoKS50b3AgLSBtdCk7alF1ZXJ5KGRvY3VtZW50KS50cmlnZ2VyKCdnZm9ybV9jb25maXJtYXRpb25fbG9hZGVkJywgWzI0XSk7d2luZG93WydnZl9zdWJtaXR0aW5nXzI0J10gPSBmYWxzZTt3cC5hMTF5LnNwZWFrKGpRdWVyeSgnI2dmb3JtX2NvbmZpcm1hdGlvbl9tZXNzYWdlXzI0JykudGV4dCgpKTt9LCA1MCk7fWVsc2V7alF1ZXJ5KCcjZ2Zvcm1fMjQnKS5hcHBlbmQoY29udGVudHMpO2lmKHdpbmRvd1snZ2Zvcm1SZWRpcmVjdCddKSB7Z2Zvcm1SZWRpcmVjdCgpO319alF1ZXJ5KGRvY3VtZW50KS50cmlnZ2VyKCdnZm9ybV9wb3N0X3JlbmRlcicsIFsyNCwgY3VycmVudF9wYWdlXSk7fSApO30gKTsgCi8qIF1dPiAqLwo="></script>
